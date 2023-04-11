@@ -8,59 +8,58 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane prefHeight="750.0" prefWidth="180.0">
-         <children>
-            <VBox prefHeight="80.0" prefWidth="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" stylesheets="@../../Styles/ClientMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    
+      <AnchorPane prefHeight="750.0" prefWidth="180.0" styleClass="left_container">
+          
+            <VBox prefHeight="80.0" prefWidth="160.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                
                   <FontAwesomeIconView glyphName="BANK" size="30" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-               </children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bank" />
+               
             </VBox>
-            <VBox prefHeight="400.0" prefWidth="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Dashboard">
+            <VBox prefHeight="400.0" prefWidth="160.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                
+                  <Button fx:id="dashboard_btn" mnemonicParsing="false" text="Dashboard">
                      <graphic>
                         <FontAwesomeIconView glyphName="HOME" size="20" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" text="Transactions">
+                  <Button fx:id="transaction_btn" mnemonicParsing="false" text="Transactions">
                      <graphic>
                         <FontAwesomeIconView glyphName="HANDSHAKE_ALT" size="20" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" text="Account">
+                  <Button fx:id="account_btn" mnemonicParsing="false" text="Account">
                      <graphic>
                         <FontAwesomeIconView glyphName="ADDRESS_BOOK_ALT" size="20" />
                      </graphic>
                   </Button>
                   <Line endX="120.0" />
-                  <Button mnemonicParsing="false" text="Profile">
+                  <Button fx:id="profile_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Profile">
                      <graphic>
                         <FontAwesomeIconView glyphName="USER" size="22" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" text="Logout">
+                  <Button fx:id="logout_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Logout">
                      <graphic>
                         <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="20" />
                      </graphic>
                   </Button>
-               </children>
+               
             </VBox>
-            <VBox prefHeight="120.0" prefWidth="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
-               <children>
+            <VBox prefHeight="120.0" prefWidth="130.0" styleClass="report_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report Bug?" />
-                  <Label text="Place to report any errors or sugesstions" />
-                  <Button mnemonicParsing="false" text="Report">
+                  <Label alignment="CENTER" text="Use this to report any errors or sugesstions" textAlignment="CENTER" />
+                  <Button fx:id="report_btn" mnemonicParsing="false" text="Report">
                      <graphic>
                         <FontAwesomeIconView glyphName="PLUS" />
                      </graphic>
                   </Button>
-               </children>
+               
             </VBox>
-         </children>
+         
       </AnchorPane>
-   </children>
+   
 </VBox>
