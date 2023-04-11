@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hi Arpit" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0" />
+      <Label text="Label" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="27.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Accounts Summary" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="90.0" />
+      <Text layoutX="20.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Accounts" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0" />
+      <HBox layoutX="20.0" layoutY="135.0" prefHeight="180.0" prefWidth="620.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="120.0" />
+      <VBox layoutX="640.0" layoutY="107.0" prefHeight="180.0" prefWidth="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0" />
+      <Text layoutX="20.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latest Transactions" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="340.0" />
+      <Text layoutX="750.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send Money" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="340.05078125" />
+      <ListView layoutX="21.0" layoutY="375.0" prefHeight="365.0" prefWidth="570.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" />
+      <VBox layoutX="605.0" layoutY="370.0" prefHeight="366.0" prefWidth="240.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+   </children>
+</AnchorPane>
