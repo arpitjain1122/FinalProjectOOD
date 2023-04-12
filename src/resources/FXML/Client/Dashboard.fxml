@@ -14,7 +14,19 @@
       <Label text="Label" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="27.0" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Accounts Summary" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="90.0" />
       <Text layoutX="20.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Accounts" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0" />
-      <HBox layoutX="20.0" layoutY="135.0" prefHeight="180.0" prefWidth="620.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="120.0" />
+      <HBox layoutX="20.0" layoutY="135.0" prefHeight="180.0" prefWidth="620.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <AnchorPane prefHeight="150.0" prefWidth="295.0">
+               <children>
+                  <Label layoutX="8.0" layoutY="14.0" text="\$35000" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="25.0" />
+                  <Label layoutX="8.0" layoutY="73.0" text="**** **** ****" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="14.0" />
+                  <Label layoutX="81.0" layoutY="59.0" text="Label" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="130.0" />
+                  <VBox layoutX="181.0" layoutY="-20.0" prefHeight="100.0" prefWidth="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="14.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="150.0" prefWidth="295.0" />
+         </children>
+      </HBox>
       <VBox layoutX="640.0" layoutY="107.0" prefHeight="180.0" prefWidth="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0" />
       <Text layoutX="20.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latest Transactions" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="340.0" />
       <Text layoutX="750.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send Money" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="340.05078125" />
