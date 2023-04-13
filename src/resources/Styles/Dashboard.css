@@ -20,7 +20,7 @@
 
 /* Accounts View*/
 
-.account_views {	
+.account_view {	
 	-fx-background-color: #FFFFFF;
 	-fx-background-radius: 10 0 0 10;
 	-fx-padding: 10 0 10 0;
@@ -99,7 +99,7 @@
 }
 
 .expense_amount {
-	-fx-text-fill: #00AA00;
+	-fx-text-fill: #AA0000;
 	-fx-font-size: 1.5em;
 	-fx-font-family: "Calibri Light";	
 }
@@ -126,14 +126,14 @@
 
 .new_trans_container {
 	-fx-background-color: #EEEEEE;
-	-fx-padding: 10;
+	-fx-padding: 20 10 20 10;
 	-fx-spacing: 10;
 	-fx-alignment: center-left;
 }
 
 .new_trans_container Label {
-	-fx-text-fill: #00AA00;
-	-fx-font-size: 1.5em;
+	-fx-font-family: "Calibri Light";
+	-fx-font-size: 1.3em;
 }
 
 
@@ -146,7 +146,7 @@
 .new_trans_container Button {
 	-fx-background-color: linear-gradient(to right, #132A13, #253F25);
 	-fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
-	-fx-pref-width: 230em;
+	-fx-pref-width: 230;
 	-fx-font-size: 1.5em;
 	-fx-font-family: "Calibri Light";
 	-fx-text-fill: #FFFFFF;	
