@@ -1,4 +1,5 @@
 package application.Controller.Client;
+package application.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,9 +17,28 @@ public class ClientMenuController implements Initializable {
 	public Button report_btn;
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL url, ResourceBundle resourceBundle) {
 		// TODO Auto-generated method stub
-
+		addListerners();
 	}
-
+	
+	private void addListerners() {
+		dashboard_btn.setOnAction(event -> onDashboard());
+		transaction_btn.setOnAction(event -> onTransactions());
+		account_btn.setOnAction(event -> onAccounts());
+	}
+	
+	private void onDashboard() {
+		Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Dashboard");
+	}
+	
+	private void onTransactions() {
+		Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transactions");
+	}
+	
+	private void onAccounts() {
+		Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Accounts");
+	}
+	
+	
 }
