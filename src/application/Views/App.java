@@ -1,8 +1,8 @@
 package application.Views;
 
 import application.Models.Model;
-import javafx.stage.Stage;
 import javafx.application.Application;
+import javafx.stage.Stage;
 
 public class App extends Application {
 	@Override
@@ -11,6 +11,5 @@ public class App extends Application {
 //		viewFactory.showLoginWindow();
 		Model.getInstance().getViewFactory().showLoginWindow();
 	}
-	
 
 }

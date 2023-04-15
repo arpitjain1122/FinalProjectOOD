@@ -5,7 +5,7 @@ import application.Views.ViewFactory;
 public class Model {
 	private static Model model;
 	private final ViewFactory viewFactory;
-	
+
 	private Model() {
 		this.viewFactory = new ViewFactory();
 	}
@@ -16,9 +16,9 @@ public class Model {
 		}
 		return model;
 	}
-	
+
 	public ViewFactory getViewFactory() {
 		return viewFactory;
 	}
-}
 
+}

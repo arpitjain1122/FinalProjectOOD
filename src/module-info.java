@@ -1,9 +1,9 @@
 module BankingSystem {
-	requires javafx.controls;
-	requires javafx.fxml;
+	requires transitive javafx.controls;
+	requires transitive javafx.fxml;
 	requires de.jensd.fx.glyphs.fontawesome;
-	requires javafx.graphics;
-	requires javafx.base;
+	requires transitive javafx.graphics;
+	requires transitive javafx.base;
 
 	// add require java.sql
 	// add org.xerial.sqlitejdbc; if required

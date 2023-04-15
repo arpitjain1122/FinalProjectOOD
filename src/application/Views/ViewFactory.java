@@ -1,77 +1,78 @@
 package application.Views;
 
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
+import application.Controller.Client.ClientController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class ViewFactory {
-	//Client Views
+	// Client Views
 	private final StringProperty clientSelectedMenuItem;
 	private AnchorPane dashboardView;
 	private AnchorPane transactionsView;
 	private AnchorPane AccountView;
-	
-	
-	public ViewFactory(){
+
+	public ViewFactory() {
 		this.clientSelectedMenuItem = new SimpleStringProperty("");
 	}
-	
+
 	/*
 	 * Client Views Section
 	 */
-	 
+
 	public StringProperty getClientSelectedMenuItem() {
 		return clientSelectedMenuItem;
 	}
-	
+
 	public AnchorPane getDashboardView() {
-		if (dashboardView = null) {
+		if (dashboardView == null) {
 			try {
-				dashboardView = new FXMLLoader(getClass().getResource("/Fxml/Client/Dashboard.fxml")).load();
-			} catch (Exception e){
+				dashboardView = new FXMLLoader(getClass().getResource("/resources/Fxml/Client/Dashboard.fxml")).load();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		return dashboardView;
 	}
-	
-	public Anchorpane getTransactionsView() {
-		if (transactionView == null) {
+
+	public AnchorPane getTransactionsView() {
+		if (transactionsView == null) {
 			try {
-				transactionView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transactions.fxml")).load();
-			} catch (Exception e){
+				transactionsView = new FXMLLoader(getClass().getResource("/resources/Fxml/Client/Transactions.fxml"))
+						.load();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		return transactionsView;
 	}
-	
+
 	public AnchorPane getAccountView() {
-		if (accountView == null) {
+		if (AccountView == null) {
 			try {
-				accountView = new FXMLLoader(getClass().getResource("/Fxml/Client/Account.fxml")).load();
+				AccountView = new FXMLLoader(getClass().getResource("/resources/Fxml/Client/Account.fxml")).load();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		return accountView;
+		return AccountView;
 	}
-		
-	
+
 	public void showLoginWindow() {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
-		createStage(loader);			
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/Fxml/Login.fxml"));
+		createStage(loader);
 	}
-	
+
 	public void showClientWindow() {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Client.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/Fxml/Client/Client.fxml"));
 		ClientController clientController = new ClientController();
 		loader.setController(clientController);
 		createStage(loader);
 	}
-	
+
 	private void createStage(FXMLLoader loader) {
 		Scene scene = null;
 		try {
@@ -81,10 +82,10 @@ public class ViewFactory {
 		}
 		Stage stage = new Stage();
 		stage.setScene(scene);
-		stage.setTitle("Maze Bank");
-		stage.show();			
+		stage.setTitle("Bank");
+		stage.show();
 	}
-	
+
 	public void closeStage(Stage stage) {
 		stage.close();
 	}
