@@ -71,7 +71,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <Button mnemonicParsing="false" text="Create New Balance" />
+            <Button fx:id="create_client_btn" mnemonicParsing="false" text="Create New Balance" />
             <Label fx:id="error_lbl" styleClass="error_lbl" text="Error:" />
          </children>
       </VBox>
