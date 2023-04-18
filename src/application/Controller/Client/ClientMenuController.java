@@ -8,6 +8,7 @@ import application.Views.ClientMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class ClientMenuController implements Initializable {
 
@@ -30,6 +31,7 @@ public class ClientMenuController implements Initializable {
 		dashboard_btn.setOnAction(event -> onDashboard());
 		transaction_btn.setOnAction(event -> onTransactions());
 		account_btn.setOnAction(event -> onAccounts());
+		logout_btn.setOnAction(event -> onLogout());
 	}
 
 	private void onDashboard() {
@@ -43,5 +45,18 @@ public class ClientMenuController implements Initializable {
 	private void onAccounts() {
 		Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
 	}
+	
+	private void onLogout() {
+	        // Get Stage
+	        Stage stage = (Stage) dashboard_btn.getScene().getWindow();
+	        // Close the client window
+	        Model.getInstance().getViewFactory().closeStage(stage);
+	        // Show Login Window
+	        Model.getInstance().getViewFactory().showLoginWindow();
+	        // Set Client Login Success Flag To False
+	        Model.getInstance().setClientLoginSuccessFlag(false);
+	}
+	
+	
 
 }
