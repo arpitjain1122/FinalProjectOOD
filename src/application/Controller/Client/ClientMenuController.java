@@ -1,4 +1,5 @@
-package application.Controller.Client;
+
+package application.Controllers.Client;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -7,30 +8,25 @@ import application.Models.Model;
 import application.Views.ClientMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class ClientMenuController implements Initializable {
-
 	public Button dashboard_btn;
 	public Button transaction_btn;
-	public Button account_btn;
+	public Button accounts_btn;
 	public Button profile_btn;
 	public Button logout_btn;
 	public Button report_btn;
-	public BorderPane client_parent;
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-		// TODO Auto-generated method stub
-		addListerners();
-
+		addListeners();
 	}
 
-	private void addListerners() {
+	private void addListeners() {
 		dashboard_btn.setOnAction(event -> onDashboard());
 		transaction_btn.setOnAction(event -> onTransactions());
-		account_btn.setOnAction(event -> onAccounts());
+		accounts_btn.setOnAction(event -> onAccounts());
 		logout_btn.setOnAction(event -> onLogout());
 	}
 
@@ -45,18 +41,15 @@ public class ClientMenuController implements Initializable {
 	private void onAccounts() {
 		Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
 	}
-	
-	private void onLogout() {
-	        // Get Stage
-	        Stage stage = (Stage) dashboard_btn.getScene().getWindow();
-	        // Close the client window
-	        Model.getInstance().getViewFactory().closeStage(stage);
-	        // Show Login Window
-	        Model.getInstance().getViewFactory().showLoginWindow();
-	        // Set Client Login Success Flag To False
-	        Model.getInstance().setClientLoginSuccessFlag(false);
-	}
-	
-	
 
+	private void onLogout() {
+		// Get Stage
+		Stage stage = (Stage) dashboard_btn.getScene().getWindow();
+		// Close the client window
+		Model.getInstance().getViewFactory().closeStage(stage);
+		// Show Login Window
+		Model.getInstance().getViewFactory().showLoginWindow();
+		// Set Client Login Success Flag To False
+		Model.getInstance().setClientLoginSuccessFlag(false);
+	}
 }
