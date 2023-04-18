@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="admin_parent" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<left> 
+<fx:include source = "AdminMenu.fxml" />
+</left>
+
+<center> 
+<fx:include source = "CreateClient.fxml" />
+</center>
+
+</BorderPane>
