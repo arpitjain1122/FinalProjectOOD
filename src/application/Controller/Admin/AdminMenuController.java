@@ -1,4 +1,4 @@
-package application.Controller.Admin;
+package application.Controllers.Admin;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,16 +16,15 @@ public class AdminMenuController implements Initializable {
 	public Button logout_btn;
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		addListerners();
+	public void initialize(URL url, ResourceBundle resourceBundle) {
+		addListeners();
 	}
 
-	private void addListerners() {
+	private void addListeners() {
 		create_client_btn.setOnAction(event -> onCreateClient());
 		clients_btn.setOnAction(event -> onClients());
-        deposit_btn.setOnAction(event -> onDeposit());
-        logout_btn.setOnAction(event -> onLogout());
+		deposit_btn.setOnAction(event -> onDeposit());
+		logout_btn.setOnAction(event -> onLogout());
 	}
 
 	private void onCreateClient() {
@@ -35,20 +34,19 @@ public class AdminMenuController implements Initializable {
 	private void onClients() {
 		Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CLIENTS);
 	}
-	
+
 	private void onDeposit() {
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DEPOSIT);
-    }
+		Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DEPOSIT);
+	}
 
-    private void onLogout() {
-        // Get Stage
-        Stage stage = (Stage) clients_btn.getScene().getWindow();
-        // Close the Admin window
-        Model.getInstance().getViewFactory().closeStage(stage);
-        // Show Login Window
-        Model.getInstance().getViewFactory().showLoginWindow();
-        // Set Admin Login Success Flag To False
-        Model.getInstance().setAdminLoginSuccessFlag(false);
-    }
-
+	private void onLogout() {
+		// Get Stage
+		Stage stage = (Stage) clients_btn.getScene().getWindow();
+		// Close the Admin window
+		Model.getInstance().getViewFactory().closeStage(stage);
+		// Show Login Window
+		Model.getInstance().getViewFactory().showLoginWindow();
+		// Set Admin Login Success Flag To False
+		Model.getInstance().setAdminLoginSuccessFlag(false);
+	}
 }
