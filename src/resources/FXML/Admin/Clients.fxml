@@ -5,9 +5,14 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="clients_container" stylesheets="@../../Styles/Clients.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clients" />
-      <ListView fx:id="clients_listview" layoutX="14.0" layoutY="31.0" prefHeight="650.0" prefWidth="800.0" styleClass="clients_container" stylesheets="@../../Styles/Clients.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="50.0" />
-   </children>
+<AnchorPane prefHeight="750.0" prefWidth="850.0"
+	styleClass="clients_container" stylesheets="@../../Styles/Clients.css"
+	xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.Controllers.Admin.ClientsController">
+	<Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE"
+		strokeWidth="0.0" text="Clients" AnchorPane.leftAnchor="14.0"
+		AnchorPane.topAnchor="14.0" />
+	<ListView fx:id="clients_listview" layoutX="14.0"
+		layoutY="46.0" prefHeight="650.0" prefWidth="800.0"
+		AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="50.0" />
 </AnchorPane>
