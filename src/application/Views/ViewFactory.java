@@ -1,16 +1,21 @@
 package application.Views;
 
-import application.Controller.Admin.AdminController;
-import application.Controller.Client.ClientController;
+import application.Controllers.Admin.AdminController;
+import application.Controllers.Client.ClientController;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ViewFactory {
-
 	private AccountType loginAccountType;
 	// Client Views
 	private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
@@ -18,9 +23,11 @@ public class ViewFactory {
 	private AnchorPane transactionsView;
 	private AnchorPane accountsView;
 
+	// Admin Views
 	private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
 	private AnchorPane createClientView;
 	private AnchorPane clientsView;
+	private AnchorPane depositView;
 
 	public ViewFactory() {
 		this.loginAccountType = AccountType.CLIENT;
@@ -39,7 +46,6 @@ public class ViewFactory {
 	/*
 	 * Client Views Section
 	 */
-
 	public ObjectProperty<ClientMenuOptions> getClientSelectedMenuItem() {
 		return clientSelectedMenuItem;
 	}
@@ -67,7 +73,7 @@ public class ViewFactory {
 		return transactionsView;
 	}
 
-	public AnchorPane getAccountView() {
+	public AnchorPane getAccountsView() {
 		if (accountsView == null) {
 			try {
 				accountsView = new FXMLLoader(getClass().getResource("/resources/Fxml/Client/Accounts.fxml")).load();
@@ -85,6 +91,9 @@ public class ViewFactory {
 		createStage(loader);
 	}
 
+	/*
+	 * Admin Views Section
+	 */
 	public ObjectProperty<AdminMenuOptions> getAdminSelectedMenuItem() {
 		return adminSelectedMenuItem;
 	}
@@ -112,6 +121,17 @@ public class ViewFactory {
 		return clientsView;
 	}
 
+	public AnchorPane getDepositView() {
+		if (depositView == null) {
+			try {
+				depositView = new FXMLLoader(getClass().getResource("/resources/Fxml/Admin/Deposit.fxml")).load();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return depositView;
+	}
+
 	public void showAdminWindow() {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/Fxml/Admin/Admin.fxml"));
 		AdminController controller = new AdminController();
@@ -124,6 +144,24 @@ public class ViewFactory {
 		createStage(loader);
 	}
 
+	public void showMessageWindow(String pAddress, String messageText) {
+		StackPane pane = new StackPane();
+		HBox hBox = new HBox(5);
+		hBox.setAlignment(Pos.CENTER);
+		Label sender = new Label(pAddress);
+		Label message = new Label(messageText);
+		hBox.getChildren().addAll(sender, message);
+		pane.getChildren().add(hBox);
+		Scene scene = new Scene(pane, 300, 100);
+		Stage stage = new Stage();
+		stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/resources/Images/icon.png"))));
+		stage.setResizable(false);
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.setTitle("Message");
+		stage.setScene(scene);
+		stage.show();
+	}
+
 	private void createStage(FXMLLoader loader) {
 		Scene scene = null;
 		try {
@@ -133,7 +171,9 @@ public class ViewFactory {
 		}
 		Stage stage = new Stage();
 		stage.setScene(scene);
-		stage.setTitle("Bank");
+		stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/resources/Images/icon.png"))));
+		stage.setResizable(false);
+		stage.setTitle("Symphony Bank");
 		stage.show();
 	}
 
