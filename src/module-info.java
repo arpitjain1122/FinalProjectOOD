@@ -1,4 +1,4 @@
-module BankingSystem {
+module Symphonybank {
 	requires transitive javafx.controls;
 	requires transitive javafx.fxml;
 	requires transitive de.jensd.fx.glyphs.fontawesome;
