@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package application.Controllers.Admin;
 
 import java.net.URL;
@@ -50,3 +51,57 @@ public class AdminMenuController implements Initializable {
 		Model.getInstance().setAdminLoginSuccessFlag(false);
 	}
 }
+=======
+package application.Controllers.Admin;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import application.Models.Model;
+import application.Views.AdminMenuOptions;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+public class AdminMenuController implements Initializable {
+	public Button create_client_btn;
+	public Button clients_btn;
+	public Button deposit_btn;
+	public Button logout_btn;
+
+	@Override
+	public void initialize(URL url, ResourceBundle resourceBundle) {
+		addListeners();
+	}
+
+	private void addListeners() {
+		create_client_btn.setOnAction(event -> onCreateClient());
+		clients_btn.setOnAction(event -> onClients());
+		deposit_btn.setOnAction(event -> onDeposit());
+		logout_btn.setOnAction(event -> onLogout());
+	}
+
+	private void onCreateClient() {
+		Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CREATE_CLIENT);
+	}
+
+	private void onClients() {
+		Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CLIENTS);
+	}
+
+	private void onDeposit() {
+		Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DEPOSIT);
+	}
+
+	private void onLogout() {
+		// Get Stage
+		Stage stage = (Stage) clients_btn.getScene().getWindow();
+		// Close the Admin window
+		Model.getInstance().getViewFactory().closeStage(stage);
+		// Show Login Window
+		Model.getInstance().getViewFactory().showLoginWindow();
+		// Set Admin Login Success Flag To False
+		Model.getInstance().setAdminLoginSuccessFlag(false);
+	}
+}
+>>>>>>> bce4b244d562c40de5c64c452dbd5eda7d6be521

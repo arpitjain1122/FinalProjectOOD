@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package application.Views;
 
 import application.Controllers.Client.TransactionCellController;
@@ -25,3 +26,32 @@ public class TransactionCellFactory extends ListCell<Transaction> {
 		}
 	}
 }
+=======
+package application.Views;
+
+import application.Controllers.Client.TransactionCellController;
+import application.Models.Transaction;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ListCell;
+
+public class TransactionCellFactory extends ListCell<Transaction> {
+	@Override
+	protected void updateItem(Transaction transaction, boolean empty) {
+		super.updateItem(transaction, empty);
+		if (empty) {
+			setText(null);
+			setGraphic(null);
+		} else {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/Fxml/Client/TransactionCell.fxml"));
+			TransactionCellController controller = new TransactionCellController(transaction);
+			loader.setController(controller);
+			setText(null);
+			try {
+				setGraphic(loader.load());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+>>>>>>> bce4b244d562c40de5c64c452dbd5eda7d6be521
